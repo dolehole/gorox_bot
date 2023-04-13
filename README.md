@@ -13,3 +13,5 @@ RUN node launch.js
 
 MOLODEC TI HAXOR!!!
 
+
+Мне похуй если не нравится, пишите сами
