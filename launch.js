@@ -28,7 +28,7 @@ async function selectReadyBot() {
                 return activeBots[i];
             }
         }
-        await new Promise(resolve => setTimeout(resolve, 2));
+        await new Promise(resolve => setTimeout(resolve, 15));
     }
 }
 
@@ -71,16 +71,14 @@ async function UpdateProtectZone() {
 
         if (Chunks.getChunkPixel(pixel.x,pixel.y) != pixel.c ) {
 
-            if (pixelCounter === 30) {
+            if (pixelCounter === 35) {
                 pixelCounter = 0;
                 currentArray++;
             }
 
             if (!(currentArray in PackPixelsBuffer))
                 PackPixelsBuffer[currentArray] = [];
-            
-            if (pixel.x > 1279 || pixel.y > 1279)
-                continue;
+
             PackPixelsBuffer[currentArray][pixelCounter] = [pixel.x, pixel.y, pixel.c]
             pixelCounter++;
 
@@ -100,7 +98,7 @@ while (true) {
             try {
                 const bot = await selectReadyBot();
                 bot.sendPixels(PackPixelsBuffer[i], false);
-                await new Promise(resolve => setTimeout(resolve, 5));
+                await new Promise(resolve => setTimeout(resolve, 25));
             } catch (e) {
                 console.log(`[!] Error place pixel, continue`);
             }
