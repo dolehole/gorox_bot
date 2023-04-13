@@ -1,0 +1,11 @@
+{
+  "imageLink": "",
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "bots": [
+    { "name":"Checker","token": "", "cooldown": 123 },
+    { "name":"Warior #1","token": "", "cooldown": 50 }
+  ]
+}
